@@ -32,8 +32,6 @@ To rebuild the workbook from Steam, place an item catalog in the same folder:
 
 - `all_skins_complete.txt`
 
-The notebook can also read the older `Skins.xlsx` format if `CATALOG_FILE` is changed accordingly.
-
 ## Dependencies
 
 Install the Python packages below:
@@ -42,11 +40,9 @@ Install the Python packages below:
 pip install numpy pandas scipy statsmodels matplotlib requests openpyxl python-calamine
 ```
 
-`python-calamine` is optional but speeds up reading large Excel workbooks.
-
 ## Running The Analysis
 
-1. Put `cs2_price_history.xlsx` next to the notebook.
+1. Put `cs2_price_history.xlsx` next to the notebook / Create one with RUN_COLLECTION = True
 2. Open `cs2_skin_market_pipeline.ipynb`.
 3. Keep `RUN_COLLECTION = False`.
 4. Run the notebook from top to bottom.
@@ -64,9 +60,3 @@ export STEAM_LOGIN_SECURE="your steamLoginSecure cookie"
 export STEAM_SESSIONID="your sessionid cookie"
 export STEAM_LANGUAGE="english"
 ```
-
-Do not commit these values to GitHub. The notebook intentionally reads them from the environment rather than storing them in code.
-
-## Notes
-
-The raw data workbook is large and may be better distributed separately from the code repository. The notebook is written so GitHub can show the full computation pipeline without exposing private Steam session data.
